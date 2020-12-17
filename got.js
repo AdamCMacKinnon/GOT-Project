@@ -74,7 +74,14 @@ $(() => {
         
         let $listGroup = $('.list-group');
         let liTags = charList.map((char) =>{
+            if(char.name === ("")){
+                char.name = 'UNKNOWN';
+            }
+            // if(char.allegiances.length ===(0)){
+            //     char.allegiances = 'NONE';
+            // }
             return `<a href="${char.url}" class="list-group-item list-group-item-action">${char.name}:  <b>houses</b> ${char.allegiances.length}</a>`
+        
         
         })
         $listGroup.html(liTags.join(''))
