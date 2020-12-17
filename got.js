@@ -97,17 +97,20 @@ $(() => {
             let $modalTitle = $('.modal-title')
             $modalBody.html('')
             $modalTitle.html(charObject.name)
+            console.log(charObject.name);
             if(charObject.allegiances.length > 0){
                 charObject.allegiances.forEach((houseUrl)=>{
                     $.get(houseUrl)
                     .done((houseObj)=>{
                         $modalBody.html(`<br>${$modalBody.html()}</br>${houseObj.name}`)
+                        
                     })
                 })
             }
             $('#exampleModalCenter').modal('show');
 
         })
+        
     })
 });
 
